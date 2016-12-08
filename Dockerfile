@@ -1,4 +1,4 @@
-FROM node:5.12.0
+FROM node:6.9.2
 
 # SETUP ADDITONAL DEPENDENCIES
 RUN apt-get update \
@@ -12,6 +12,7 @@ RUN apt-get update \
 ADD ./vendor/ /opt/oracle/vendor
 RUN unzip /opt/oracle/vendor/instantclient-basic-linux.x64-12.1.0.2.0.zip -d /opt/oracle \
   && unzip /opt/oracle/vendor/instantclient-sdk-linux.x64-12.1.0.2.0.zip -d /opt/oracle  \
+  && unzip /opt/oracle/vendor/instantclient-sqlplus-linux.x64-12.1.0.2.0.zip -d /opt/oracle  \
   && mv /opt/oracle/instantclient_12_1 /opt/oracle/instantclient \
   && ln -s /opt/oracle/instantclient/libclntsh.so.12.1 /opt/oracle/instantclient/libclntsh.so \
   && ln -s /opt/oracle/instantclient/libocci.so.12.1 /opt/oracle/instantclient/libocci.so \
