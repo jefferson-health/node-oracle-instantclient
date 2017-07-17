@@ -1,4 +1,4 @@
-FROM node:6.9.2
+FROM node:6.11.1
 
 # SETUP ADDITONAL DEPENDENCIES
 RUN apt-get update \
